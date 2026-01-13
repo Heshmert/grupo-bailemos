@@ -1,0 +1,87 @@
+{
+  "ejemplo": {
+      "nombre": "",
+      "cargo": "",
+      "descripcion": "",
+      "edad": 0,
+      "imagen": "",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    },
+  "equipo": [
+    {
+      "nombre": "Aholimar S. Hernandez",
+      "cargo": "Directora",
+      "descripcion": "Lider tenaz, pilar fundamental de la institución.",
+      "edad": 40,
+      "imagen": "aholimar.jpeg",
+      "instagram": "https://www.instagram.com/sofia.luna",
+      "twitter": "https://twitter.com/sofia_luna",
+      "facebook": "https://www.facebook.com/sofia.luna"
+    },
+    {
+      "nombre": "Lelia Crespo",
+      "cargo": "Aqui sino no se que es lelia",
+      "descripcion": "Artista plástica que inspira creatividad y técnica en cada taller.",
+      "edad": 45,
+      "imagen": "lelia.jpeg",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    },
+    {
+      "nombre": "Rosa Vera",
+      "cargo": "Instructura de Ritmos Latinos",
+      "descripcion": "Artista plástica que inspira creatividad y técnica en cada taller.",
+      "edad": 30,
+      "imagen": "rosa.jpeg",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    },
+    {
+      "nombre": "Juan P. Gonzalez L. P.",
+      "cargo": "Instructuror de Ilustración Digital",
+      "descripcion": "Artista plástica que inspira creatividad y técnica en cada taller.",
+      "edad": 19,
+      "imagen": "juan.jpeg",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    },
+    {
+      "nombre": "Wilfredo Torres",
+      "cargo": "Marketing & Publicidad",
+      "descripcion": "Artista plástica que inspira creatividad y técnica en cada taller.",
+      "edad": 20,
+      "imagen": "wilfredo.jpeg",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    },
+    {
+      "nombre": "Mayra Tisoy",
+      "cargo": "Instructura de Realismo, Comic & Manga",
+      "descripcion": "Maestro de técnica y disciplina, guía a niños y adultos en el arte del ballet.",
+      "edad": 27,
+      "imagen": "mayra.jpeg",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    },
+    {
+      "nombre": "Sara",
+      "cargo": "Instructura de Ballet infantil y jovenes",
+      "descripcion": "Artista plástica que inspira creatividad y técnica en cada taller.",
+      "edad": 19,
+      "imagen": "sara.jpeg",
+      "instagram": "",
+      "twitter": "",
+      "facebook": ""
+    }
+  ]
+}
+
+
+    

@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string
+  description: string
+  image: string
+}
+
+const { title, description, image} = Astro.props
+---
+
+<div class="bg-font text-white rounded-xl shadow-lg overflow-hidden">
+  <!-- Imagen superior -->
+  <img src={image} alt={title} class="w-full h-56 object-cover " />
+
+  <!-- Contenido -->
+  
+
+  <a href="/programas">
+     <div class="p-4">
+    <h3 class="text-4xl font-semibold mb-2 bebas">{title}</h3>
+    <p class="text-xl mb-4 allan ">{description}</p>
+  </div>
+  </a>
+</div>

@@ -1,0 +1,55 @@
+
+<header id="mainHeader" class="fixed top-0 left-0 w-full z-50 h-24 md:h-16 bg-transparent text-white transition-all duration-500">
+  <div id="headerContent" class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center text-lg transition-all duration-500">
+    <!-- Logo -->
+    <div id="logo" class="text-34xl font-bold transition-all duration-500 lora flex items-center">
+      <img src="/logo.webp" alt="Logo" class="h-10 inline-block mr-2">
+      Grupo Bailemos
+    </div>
+
+    <!-- Navegación -->
+    <nav id="navLinks" class="space-x-6 bebas">
+      <a href="/" class="nav-link hover:text-[#23E628] transition">Inicio</a>
+      <a href="/programas" class="nav-link hover:text-[#23E628] transition">Programas</a>
+      <a href="/about" class="nav-link hover:text-[#23E628] transition">Nosotros</a>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('mainHeader');
+  const headerContent = document.getElementById('headerContent');
+  const logo = document.getElementById('logo');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll) {
+      // Scrolling down → ocultar header
+      header.style.transform = 'translateY(-100%)';
+    } else {
+      // Scrolling up → mostrar header
+      header.style.transform = 'translateY(0)';
+
+      if (currentScroll > 50) {
+        // Con fondo morado y tamaño más pequeño
+        header.classList.remove('bg-transparent');
+        header.classList.add('bg-deep');
+        headerContent.classList.remove('py-6');
+        headerContent.classList.add('py-4');
+        logo.classList.remove('text-3xl');
+        logo.classList.add('text-2xl');
+      } else {
+        // Transparente y grande
+        header.classList.remove('bg-deep');
+        header.classList.add('bg-transparent');
+        headerContent.classList.remove('py-4');
+        headerContent.classList.add('py-6');
+        logo.classList.remove('text-2xl');
+        logo.classList.add('text-3xl');
+      }
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>

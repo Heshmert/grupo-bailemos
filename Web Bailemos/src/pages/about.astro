@@ -1,0 +1,199 @@
+---
+import Equipo from '../components/secciones/Equipo.astro';
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout>
+
+<section class="py-30 bg-deep">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold  mb-12 text-center">Nuestra Historia</h2>
+
+    <!-- Bloque 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+      <!-- Texto izquierda -->
+      <div>
+        <h3 class="text-2xl font-semibold  mb-4">Los Inicios</h3>
+        <p>
+          Grupo Bailemos nació con la visión de ser un espacio inclusivo donde cada persona
+          pudiera descubrir su talento y transformar su energía en arte.
+        </p>
+      </div>
+      <!-- Imagen derecha -->
+      <div class="flex justify-center">
+        <img src="/historia (1).jpeg" alt="Icono danza" class="rounded-lg shadow-md">
+      </div>
+    </div>
+
+    <!-- Bloque 2 (invertido) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+      <!-- Imagen izquierda -->
+      <div class="flex justify-center md:order-1">
+        <img src="/historia (2).png" alt="Icono arte" class="rounded-lg shadow-md">
+      </div>
+      <!-- Texto derecha -->
+      <div class="md:order-2">
+        <h3 class="text-2xl font-semibold mb-4">Expansión</h3>
+        <p>
+          Con el tiempo, ampliamos nuestra oferta a disciplinas como ballet, danza contemporánea,
+          ritmos urbanos y artes visuales, siempre con excelencia y profesionalismo.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bloque 3 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Texto izquierda -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Hoy</h3>
+        <p>
+          Somos un centro multidisciplinario que combina tradición y modernidad, formando una
+          comunidad vibrante que inspira y transforma.
+        </p>
+      </div>
+      <!-- Imagen derecha -->
+      <div class="flex justify-center">
+        <img src="/historia (3).png" alt="Icono comunidad" class="rounded-lg shadow-md">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-16 bg-font">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <!-- Título -->
+    <h2 class="text-4xl font-bold mb-4">Nuestros Principios y Valores</h2>
+    <p class="text-lg mb-12">
+      La base que guía cada paso que damos.
+    </p>
+
+    <!-- Grid de valores -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      
+      <!-- Valor 1 -->
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <div class="mb-4 flex justify-center">
+          <!-- Icono libro -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#3F2B67] shadow-[6px_6px_0px_rgba(63,43,103,0.5)] rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M12 6v13M6 6h12v13H6z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Excelencia</h3>
+        <p class="text-[#331D2C] text-sm">
+          Buscamos la máxima calidad en cada clase y actividad, honrando nuestra promesa de profesionalismo.
+        </p>
+      </div>
+
+      <!-- Valor 2 -->
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <div class="mb-4 flex justify-center">
+          <!-- Icono personas -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#3F2B67] shadow-[6px_6px_0px_rgba(63,43,103,0.5)] rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="7" r="4"/><path d="M17 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z"/><path d="M2 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M14 21v-2a4 4 0 014-4h2a4 4 0 014 4v2"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Inclusión</h3>
+        <p class="text-[#331D2C] text-sm">
+          Creamos un espacio donde todos se sienten parte, sin importar edad, nivel o disciplina.
+        </p>
+      </div>
+
+      <!-- Valor 3 -->
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <div class="mb-4 flex justify-center">
+          <!-- Icono fuego -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#3F2B67] shadow-[6px_6px_0px_rgba(63,43,103,0.5)] rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M12 3c2.5 2.5 4 5.5 4 9a7 7 0 11-14 0c0-3.5 1.5-6.5 4-9l6 9"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Pasión</h3>
+        <p class="text-[#331D2C] text-sm">
+          La energía y el amor por el arte nos impulsan a transformar cada experiencia en algo único.
+        </p>
+      </div>
+
+      <!-- Valor 4 -->
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <div class="mb-4 flex justify-center">
+          <!-- Icono reloj -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#3F2B67] shadow-[6px_6px_0px_rgba(63,43,103,0.5)] rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Disciplina</h3>
+        <p class="text-[#331D2C] text-sm">
+          La constancia y el compromiso son la base para alcanzar nuestras metas artísticas.
+        </p>
+      </div>
+
+      <!-- Valor 5 -->
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <div class="mb-4 flex justify-center">
+          <!-- Icono bombilla -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#3F2B67] shadow-[6px_6px_0px_rgba(63,43,103,0.5)] rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M9 18h6M10 22h4M12 2a7 7 0 00-7 7c0 3 2 5 4 6v3h6v-3c2-1 4-3 4-6a7 7 0 00-7-7z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Creatividad</h3>
+        <p class="text-[#331D2C] text-sm">
+          Fomentamos la innovación y la expresión única en cada disciplina artística.
+        </p>
+      </div>
+
+      <!-- Valor 6 -->
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <div class="mb-4 flex justify-center">
+          <!-- Icono corazón -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#3F2B67] shadow-[6px_6px_0px_rgba(63,43,103,0.5)] rounded-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M12 21C12 21 4 13.5 4 8a4 4 0 0 1 8 0 4 4 0 0 1 8 0c0 5.5-8 13-8 13z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Comunidad</h3>
+        <p class="text-[#331D2C] text-sm">
+          Creemos en el poder de la unión y el apoyo mutuo para crecer juntos.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<Equipo />
+
+
+<section class="py-16 bg-[#FFFFFF]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-[#3F2B67] mb-12 text-center">Casos de Éxito</h2>
+    
+    <!-- Caso 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+      <img src="https://dummyimage.com/400x250" alt="Caso éxito" class="rounded-lg shadow-md">
+      <div>
+        <h3 class="text-2xl font-semibold text-[#3F2B67] mb-4">De alumno a instructor</h3>
+        <p class="text-[#331D2C]">
+          Pedro inició en nuestras clases de Zumba como alumno tímido. Hoy es instructor certificado,
+          liderando grupos y transmitiendo la misma pasión que lo transformó.
+        </p>
+      </div>
+    </div>
+
+    <!-- Caso 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <img src="https://dummyimage.com/400x250" alt="Caso éxito" class="rounded-lg shadow-md md:order-2">
+      <div class="md:order-1">
+        <h3 class="text-2xl font-semibold text-[#3F2B67] mb-4">Ballet como camino profesional</h3>
+        <p class="text-[#331D2C]">
+          Ana comenzó en nuestro programa infantil de ballet. Tras años de disciplina y dedicación,
+          fue aceptada en una compañía internacional, llevando su talento al escenario mundial.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</Layout>

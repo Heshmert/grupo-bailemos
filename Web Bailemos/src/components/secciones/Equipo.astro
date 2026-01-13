@@ -1,0 +1,31 @@
+---
+import Team from '../../components/Team.astro';
+import team from '../../data/team.json';
+---
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <!-- Título -->
+    <h2 class="text-4xl font-bold text-[#3F2B67] mb-4">Nuestro Equipo</h2>
+    <p class="text-lg text-[#331D2C] mb-12">
+      Profesionales apasionados que hacen de Grupo Bailemos un espacio único.
+    </p>
+
+    <!-- Grid de empleados -->
+    <div class="flex flex-wrap -m-4">
+
+    {team.equipo.map((miembro) => (
+    <Team
+      nombre={miembro.nombre}
+      rol={miembro.cargo}
+      descripcion={miembro.descripcion}
+      imagen={miembro.imagen}
+      instagram={miembro.instagram}
+      twitter={miembro.twitter}
+      facebook={miembro.facebook}
+    />
+  ))}
+
+
+    </div>
+  </div>
+</section>

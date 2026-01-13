@@ -1,0 +1,58 @@
+---
+interface Props {
+  nombre: string
+  rol: string
+  descripcion: string
+  imagen: string
+  instagram?: string
+  twitter?: string
+  facebook?: string
+}
+
+const { nombre, rol, descripcion, imagen, instagram, twitter, facebook } = Astro.props
+---
+
+<div class="p-4 lg:w-1/2">
+  <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+    <!-- Imagen -->
+    <img 
+      alt={nombre}
+      src={imagen}
+      class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
+    />
+
+    <!-- Contenido -->
+    <div class="flex-grow sm:pl-8">
+      <h2 class="title-font font-medium text-lg text-gray-900">{nombre}</h2>
+      <h3 class="text-gray-500 mb-3">{rol}</h3>
+      <p class="mb-4 text-xl text-gray-700 allan">{descripcion}</p>
+
+      <!-- Iconos sociales (solo si el prop existe) -->
+      <div>
+        <span class="inline-flex items-center">
+          {instagram && (
+            <a href={instagram} target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#E1306C] transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+              </svg>
+            </a>
+          )}
+          {twitter && (
+            <a href={twitter} target="_blank" rel="noopener noreferrer" class="ml-2 text-gray-500 hover:text-[#1DA1F2] transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.14 4.14 0 00-7.06 3.77 11.76 11.76 0 01-8.53-4.32 4.14 4.14 0 001.28 5.52c-.66-.02-1.28-.2-1.82-.5v.05a4.13 4.13 0 003.32 4.05c-.58.16-1.19.19-1.78.07a4.14 4.14 0 003.86 2.87A8.3 8.3 0 013 19.54a11.74 11.74 0 006.36 1.86c7.64 0 11.82-6.33 11.82-11.82 0-.18-.01-.36-.02-.53A8.43 8.43 0 0022.46 6z"/>
+              </svg>
+            </a>
+          )}
+          {facebook && (
+            <a href={facebook} target="_blank" rel="noopener noreferrer" class="ml-2 text-gray-500 hover:text-[#1877F2] transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.4V12h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4V12h2.6l-.4 2.9h-2.2v7A10 10 0 0022 12z"/>
+              </svg>
+            </a>
+          )}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

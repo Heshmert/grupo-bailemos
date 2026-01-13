@@ -1,0 +1,158 @@
+{
+  "programas": [
+    {
+      "titulo": "Zumba",
+      "descripcion": "Diversión, cardio y baile para mantenerte activo.",
+      "imagen": "/img (7).jpeg",
+      "resumen": "Programa de Zumba diseñado para mejorar tu resistencia cardiovascular, coordinación y energía.",
+      "galeria": [
+        "/img (1).jpeg",
+        "/img (2).jpeg",
+        "/img (3).jpeg",
+        "/img (4).jpeg",
+        "/img (5).jpeg",
+        "/img (6).jpeg"
+      ],
+      "contenidos": [
+        "Calentamiento dinámico",
+        "Rutinas de cardio",
+        "Pasos básicos de Zumba",
+        "Coreografías grupales",
+        "Ejercicios de resistencia",
+        "Estiramientos finales"
+      ]
+    },
+    {
+      "titulo": "Zumba",
+      "descripcion": "Diversión, cardio y baile para mantenerte activo.",
+      "imagen": "img (7).jpeg",
+      "resumen": "Programa de Zumba diseñado para mejorar tu resistencia cardiovascular, coordinación y energía.",
+      "galeria": [
+        "img (1).jpeg",
+        "img (2).jpeg",
+        "img (3).jpeg",
+        "img (4).jpeg",
+        "img (5).jpeg",
+        "img (6).jpeg"
+      ],
+      "contenidos": [
+        "Calentamiento dinámico",
+        "Rutinas de cardio",
+        "Pasos básicos de Zumba",
+        "Coreografías grupales",
+        "Ejercicios de resistencia",
+        "Estiramientos finales"
+      ]
+    },
+    {
+      "titulo": "Zumba",
+      "descripcion": "Diversión, cardio y baile para mantenerte activo.",
+      "imagen": "img (7).jpeg",
+      "resumen": "Programa de Zumba diseñado para mejorar tu resistencia cardiovascular, coordinación y energía.",
+      "galeria": [
+        "img (1).jpeg",
+        "img (2).jpeg",
+        "img (3).jpeg",
+        "img (4).jpeg",
+        "img (5).jpeg",
+        "img (6).jpeg"
+      ],
+      "contenidos": [
+        "Calentamiento dinámico",
+        "Rutinas de cardio",
+        "Pasos básicos de Zumba",
+        "Coreografías grupales",
+        "Ejercicios de resistencia",
+        "Estiramientos finales"
+      ]
+    },
+    {
+      "titulo": "Zumba",
+      "descripcion": "Diversión, cardio y baile para mantenerte activo.",
+      "imagen": "img (7).jpeg",
+      "resumen": "Programa de Zumba diseñado para mejorar tu resistencia cardiovascular, coordinación y energía.",
+      "galeria": [
+        "img (1).jpeg",
+        "img (2).jpeg",
+        "img (3).jpeg",
+        "img (4).jpeg",
+        "img (5).jpeg",
+        "img (6).jpeg"
+      ],
+      "contenidos": [
+        "Calentamiento dinámico",
+        "Rutinas de cardio",
+        "Pasos básicos de Zumba",
+        "Coreografías grupales",
+        "Ejercicios de resistencia",
+        "Estiramientos finales"
+      ]
+    },
+    {
+      "titulo": "Zumba",
+      "descripcion": "Diversión, cardio y baile para mantenerte activo.",
+      "imagen": "img (7).jpeg",
+      "resumen": "Programa de Zumba diseñado para mejorar tu resistencia cardiovascular, coordinación y energía.",
+      "galeria": [
+        "img (1).jpeg",
+        "img (2).jpeg",
+        "img (3).jpeg",
+        "img (4).jpeg",
+        "img (5).jpeg",
+        "img (6).jpeg"
+      ],
+      "contenidos": [
+        "Calentamiento dinámico",
+        "Rutinas de cardio",
+        "Pasos básicos de Zumba",
+        "Coreografías grupales",
+        "Ejercicios de resistencia",
+        "Estiramientos finales"
+      ]
+    },
+    {
+      "titulo": "Ballet Clásico",
+      "descripcion": "Disciplina, técnica y elegancia en cada movimiento.",
+      "imagen": "img/ballet.jpeg",
+      "resumen": "Curso de Ballet Clásico para desarrollar postura, fuerza y sensibilidad artística.",
+      "galeria": [
+        "img/ballet1.jpeg",
+        "img/ballet2.jpeg",
+        "img/ballet3.jpeg",
+        "img/ballet4.jpeg",
+        "img/ballet5.jpeg",
+        "img/ballet6.jpeg"
+      ],
+      "contenidos": [
+        "Posiciones básicas",
+        "Barra y centro",
+        "Saltos y giros",
+        "Coreografías clásicas",
+        "Expresión corporal",
+        "Estiramientos y relajación"
+      ]
+    },
+    {
+      "titulo": "Danza Contemporánea",
+      "descripcion": "Explora la libertad del movimiento y la expresión.",
+      "imagen": "img/contemporanea.jpeg",
+      "resumen": "Programa de danza contemporánea que combina técnica y creatividad para expresar emociones.",
+      "galeria": [
+        "img/contemp1.jpeg",
+        "img/contemp2.jpeg",
+        "img/contemp3.jpeg",
+        "img/contemp4.jpeg",
+        "img/contemp5.jpeg",
+        "img/contemp6.jpeg"
+      ],
+      "contenidos": [
+        "Improvisación guiada",
+        "Técnicas de suelo",
+        "Movimientos fluidos",
+        "Composición coreográfica",
+        "Trabajo en dúo y grupo",
+        "Respiración y conciencia corporal"
+      ]
+    }
+  ]
+}

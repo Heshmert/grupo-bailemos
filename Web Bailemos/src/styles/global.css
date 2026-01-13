@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Fondo principal: profundidad y elegancia */
+/* Fondo profundo: morado elegante */
+.bg-deep {
+  background: linear-gradient(135deg, #3F2B67 0%, #331D2C 100%);
+  color: #FFFFFF;
+}
+
+/* Fondo balanceado: neón controlado con verde bosque */
+.bg-balanced {
+  background: linear-gradient(135deg, #23E628 0%, #29821E 100%);
+  color: #FFFFFF;
+}
+
+/* Fondo minimalista con aire (ajustado: morado más claro) */
+.bg-air {
+  background: linear-gradient(135deg, #FFFFFF 0%, #824fd3 100%); /* morado más claro */
+  color: #331D2C;
+}
+
+/* Fondo fresco: verde muy clarito con blanco */
+.bg-fresh {
+  background: linear-gradient(135deg, #FFFFFF 0%, #88ce80 100%); /* verde pastel */
+  color: #29821E; /* texto en verde bosque para contraste */
+}
+
+/* Fondo suave: verde con un toque más brillante */
+.bg-font {
+  background: #fff8f8 100%; /* verde aún más claro */
+  color: #331D2C;}
+
+
+h1, h2, h3 {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.allan {
+  font-family: "Allan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.allan-bold {
+  font-family: "Allan", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.marker {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

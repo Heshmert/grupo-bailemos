@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Login">
+  <main>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Entrar</button>
+    </form>
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById('loginForm') as HTMLFormElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log("1. Intento de login iniciado...");
+
+    const API_URL = import.meta.env.PUBLIC_API_URL;
+    const emailEl = document.getElementById('email') as HTMLInputElement;
+    const passEl = document.getElementById('password') as HTMLInputElement;
+
+    try {
+      const response = await fetch(`${API_URL}/login`, {
+        method: 'POST',
+        credentials: 'omit', // Evita enviar cookies
+        headers: {
+          'Content-Type': 'application/json', // OBLIGATORIO para que Cake lo vea como JSON
+        },
+        body: JSON.stringify({
+          email: emailEl.value.trim(),      // .trim() por si hay espacios accidentales
+          password: passEl.value.trim()
+        })
+      });
+
+      console.log("2. Respuesta recibida del servidor. Status:", response.status);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("3. Datos recibidos:", data);
+
+        // MUY IMPORTANTE: localStorage guarda todo como STRING
+        // Convertimos el rol a string por si viene como número
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', String(data.role)); 
+        localStorage.setItem('email', data.email);
+        localStorage.setItem('fullname', data.fullname);
+
+        console.log("4. localStorage guardado. Redirigiendo...");
+
+        // Ajuste según tus roles 1, 2, 3
+        if (String(data.role) === '1') {
+          window.location.href = '/dashboard/directivo';
+        } else if (String(data.role) === '2') {
+          window.location.href = '/dashboard/instructor';
+        } else {
+          console.error("Rol no reconocido:", data.role);
+        }
+      } else {
+        const errorData = await response.text();
+        console.error("Error en credenciales. Respuesta del servidor:", errorData);
+        alert("Credenciales incorrectas");
+      }
+    } catch (error) {
+      console.error("5. Error fatal en el fetch:", error);
+    }
+  });
+</script>

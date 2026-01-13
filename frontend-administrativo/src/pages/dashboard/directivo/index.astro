@@ -1,0 +1,10 @@
+---
+import DashboardLayout from '../../../layouts/DashboardLayout.astro';
+---
+<DashboardLayout title="Panel Directivo">
+  <h1>Bienvenido Directivo</h1>
+  <script>
+    import { checkAccess } from '../../../utils/roleGuard.js';
+    checkAccess(['1']);
+  </script>
+</DashboardLayout>

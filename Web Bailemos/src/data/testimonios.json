@@ -1,0 +1,19 @@
+{
+  "testimonios": [
+    {
+      "mensaje": "Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.",
+      "nombre": "Holden Caulfield",
+      "rol": "UI DEVELOPER"
+    },
+    {
+      "mensaje": "La experiencia en Grupo Bailemos ha sido transformadora. Cada clase me inspira y me motiva a seguir creciendo.",
+      "nombre": "María Pérez",
+      "rol": "Estudiante de Ballet"
+    },
+    {
+      "mensaje": "Los profesores transmiten pasión y disciplina. Me siento parte de una comunidad artística única.",
+      "nombre": "Carlos Méndez",
+      "rol": "Profesor de Ballet Clásico"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+---
+import noticias from '../../data/noticias.json';
+---
+
+<section class="bg-white text-[#331D2C] body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-col">
+    <!-- Encabezado -->
+    <h1 class="sm:text-6xl text-2xl font-medium title-font text-center pb-8">
+      Noticias Recientes
+    </h1>
+
+    <!-- Collage -->
+    <div class="flex flex-wrap md:-m-2 -m-1">
+      <!-- Columna izquierda (visible siempre, ocupa todo en móvil) -->
+      <div class="flex flex-wrap w-full md:w-1/2">
+        <!-- Noticia 1 -->
+        <div class="md:p-2 p-1 w-1/2 relative">
+          <img src={noticias.noticias[0].imagen} alt={noticias.noticias[0].titulo}
+               class="w-full h-64 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 rounded-lg"></div>
+          <div class="absolute bottom-0 p-4 text-white">
+            <h3 class="text-lg font-semibold">{noticias.noticias[0].titulo}</h3>
+            <p class="text-sm">{noticias.noticias[0].descripcion}</p>
+          </div>
+        </div>
+
+        <!-- Noticia 2 -->
+        <div class="md:p-2 p-1 w-1/2 relative">
+          <img src={noticias.noticias[1].imagen} alt={noticias.noticias[1].titulo}
+               class="w-full h-64 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 rounded-lg"></div>
+          <div class="absolute bottom-0 p-4 text-white">
+            <h3 class="text-lg font-semibold">{noticias.noticias[1].titulo}</h3>
+            <p class="text-sm">{noticias.noticias[1].descripcion}</p>
+          </div>
+        </div>
+
+        <!-- Noticia 3 -->
+        <div class="md:p-2 p-1 w-full relative">
+          <img src={noticias.noticias[2].imagen} alt={noticias.noticias[2].titulo}
+               class="w-full h-64 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 rounded-lg"></div>
+          <div class="absolute bottom-0 p-4 text-white">
+            <h3 class="text-lg font-semibold">{noticias.noticias[2].titulo}</h3>
+            <p class="text-sm">{noticias.noticias[2].descripcion}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha (oculta en móvil, visible en desktop) -->
+      <div class="hidden md:flex flex-wrap w-1/2">
+        <!-- Noticia 4 -->
+        <div class="md:p-2 p-1 w-full relative">
+          <img src={noticias.noticias[3].imagen} alt={noticias.noticias[3].titulo}
+               class="w-full h-64 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 rounded-lg"></div>
+          <div class="absolute bottom-0 p-4 text-white">
+            <h3 class="text-lg font-semibold">{noticias.noticias[3].titulo}</h3>
+            <p class="text-sm">{noticias.noticias[3].descripcion}</p>
+          </div>
+        </div>
+
+        <!-- Noticia 5 -->
+        <div class="md:p-2 p-1 w-1/2 relative">
+          <img src={noticias.noticias[4].imagen} alt={noticias.noticias[4].titulo}
+               class="w-full h-64 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 rounded-lg"></div>
+          <div class="absolute bottom-0 p-4 text-white">
+            <h3 class="text-lg font-semibold">{noticias.noticias[4].titulo}</h3>
+            <p class="text-sm">{noticias.noticias[4].descripcion}</p>
+          </div>
+        </div>
+
+        <!-- Noticia 6 -->
+        <div class="md:p-2 p-1 w-1/2 relative">
+          <img src={noticias.noticias[5].imagen} alt={noticias.noticias[5].titulo}
+               class="w-full h-64 object-cover rounded-lg" />
+          <div class="absolute inset-0 bg-black/50 rounded-lg"></div>
+          <div class="absolute bottom-0 p-4 text-white">
+            <h3 class="text-lg font-semibold">{noticias.noticias[5].titulo}</h3>
+            <p class="text-sm">{noticias.noticias[5].descripcion}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

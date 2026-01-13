@@ -1,0 +1,12 @@
+---
+const { svg, titulo, descripcion } = Astro.props;
+
+---
+
+  <div class="bg-[#FFFFFF] border border-[#E5E5E5] rounded-xl shadow-md p-6 text-center">
+    <div class="flex justify-center mb-4">
+        {svg}
+    </div>
+    <h3 class="text-xl font-semibold text-[#3F2B67] mb-2">{titulo}</h3>
+    <p class="text-sm text-[#331D2C]">{descripcion}</p>
+  </div>

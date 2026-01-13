@@ -1,0 +1,40 @@
+{
+  "noticias": [
+    {
+      "titulo": "Noticia 1",
+      "descripcion": "Resumen breve de la noticia número 1.",
+      "imagen": "/noticias (1).jpeg",
+      "enlace": "#noticia1"
+    },
+    {
+      "titulo": "Noticia 2",
+      "descripcion": "Resumen breve de la noticia número 2.",
+      "imagen": "/noticias (2).jpeg",
+      "enlace": "#noticia2"
+    },
+    {
+      "titulo": "Noticia 3",
+      "descripcion": "Resumen breve de la noticia número 3.",
+      "imagen": "/noticias (3).jpeg",
+      "enlace": "#noticia3"
+    },
+    {
+      "titulo": "Noticia 4",
+      "descripcion": "Resumen breve de la noticia número 4.",
+      "imagen": "/noticias (4).jpeg",
+      "enlace": "#noticia4"
+    },
+    {
+      "titulo": "Noticia 5",
+      "descripcion": "Resumen breve de la noticia número 5.",
+      "imagen": "/noticias (5).jpeg",
+      "enlace": "#noticia5"
+    },
+    {
+      "titulo": "Noticia 6",
+      "descripcion": "Resumen breve de la noticia número 6.",
+      "imagen": "/noticias (6).jpeg",
+      "enlace": "#noticia6"
+    }
+  ]
+}
