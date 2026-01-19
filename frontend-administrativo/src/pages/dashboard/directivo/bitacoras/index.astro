@@ -1,0 +1,139 @@
+---
+import DashboardLayout from '../../../../layouts/DashboardLayout.astro';
+
+// 1. CONFIGURACIÓN DE API (Descomentar al conectar)
+// const API_URL = import.meta.env.PUBLIC_API_URL;
+// const response = await fetch(`${API_URL}/logbook?contain=Programs,Users`, {
+//   headers: { 'Authorization': `Bearer ${Astro.cookies.get('token')}` }
+// });
+// const logbooks = await response.json();
+
+// 2. DATOS DE PRUEBA
+const logbooks = [
+  { id: 1, program_id: 10, user_id: 5, date: '2023-10-25', program_name: 'Salsa Básico', user_name: 'Juan Perez' },
+  { id: 2, program_id: 12, user_id: 8, date: '2023-10-26', program_name: 'Bachata Avanzado', user_name: 'Maria Lopez' },
+  { id: 3, program_id: 10, user_id: 5, date: '2023-10-27', program_name: 'Salsa Básico', user_name: 'Juan Perez' }
+];
+---
+
+<DashboardLayout title="Bitácoras">
+  <div class="header-section">
+    <h1>Bitácoras de Instrucción</h1>
+    <div class="filters">
+      <span>Vista General de Registros</span>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Programa (ID)</th>
+          <th>Instructor (ID)</th>
+          <th>Nombre del Programa</th>
+          <th>Instructor Responsable</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {logbooks.map((log) => (
+          <tr>
+            <td class="date-cell">{log.date}</td>
+            <td><span class="id-badge">ID: {log.program_id}</span></td>
+            <td><span class="id-badge">ID: {log.user_id}</span></td>
+            <td><strong>{log.program_name}</strong></td>
+            <td>{log.user_name}</td>
+            <td>
+              <a href={`/dashboard/directivo/bitacoras/${log.id}`} class="view-link">Ver Detalle</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    import { checkAccess } from '../../../../utils/roleGuard.js';
+    checkAccess(['1']);
+  </script>
+</DashboardLayout>
+
+<style>
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .filters {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .table-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  th {
+    background: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    color: #475569;
+    border-bottom: 2px solid #e2e8f0;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+  }
+
+  .date-cell {
+    font-family: monospace;
+    font-weight: bold;
+    color: #0284c7;
+  }
+
+  .id-badge {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  .view-link {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .view-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    /* En móvil ocultamos IDs para ahorrar espacio */
+    th:nth-child(2), th:nth-child(3),
+    td:nth-child(2), td:nth-child(3) {
+      display: none;
+    }
+  }
+</style>

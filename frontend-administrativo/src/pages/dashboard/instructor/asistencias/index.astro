@@ -1,0 +1,39 @@
+---
+import DashboardLayout from '../../../../layouts/DashboardLayout.astro';
+
+// Aquí recibirías el lesson_id de la URL y traerías los alumnos registrados
+const { id } = Astro.params;
+
+const students = [
+  { id: 1, name1: 'Carlos', lastname1: 'Ruiz', status: 'Presente' },
+  { id: 2, name1: 'Ana', lastname1: 'Sanz', status: 'Ausente' }
+];
+---
+
+<DashboardLayout title="Pasar Asistencia">
+  <div class="header-section">
+    <h1>Asistencia - Clase #{id}</h1>
+    <button class="btn-save">Guardar Cambios</button>
+  </div>
+
+  <div class="attendance-list">
+    {students.map(s => (
+      <div class="student-row">
+        <span>{s.name1} {s.lastname1}</span>
+        <div class="status-options">
+          <label><input type="radio" name={`s-${s.id}`} checked={s.status === 'Presente'} /> P</label>
+          <label><input type="radio" name={`s-${s.id}`} checked={s.status === 'Ausente'} /> A</label>
+        </div>
+      </div>
+    ))}
+  </div>
+</DashboardLayout>
+
+<style>
+  .header-section { display: flex; justify-content: space-between; margin-bottom: 2rem; }
+  .btn-save { background: #16a34a; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; }
+  .attendance-list { background: white; border-radius: 12px; padding: 1rem; }
+  .student-row { display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #f1f5f9; align-items: center; }
+  .status-options { display: flex; gap: 1rem; }
+  label { font-weight: bold; cursor: pointer; }
+</style>

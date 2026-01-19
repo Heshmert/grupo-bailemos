@@ -1,0 +1,58 @@
+---
+import DashboardLayout from '../../../../layouts/DashboardLayout.astro';
+
+// CONFIGURACIÓN API (Relaciona lessons, programs y contents)
+// const response = await fetch(`${API_URL}/lessons?user_id=...&contain=Programs,Contents`);
+// const lessons = await response.json();
+
+const lessons = [
+  { id: 10, date: '2023-11-01', program_name: 'Salsa Casino 1', content_tema: 'Paso Básico', students_count: 15 },
+  { id: 11, date: '2023-11-02', program_name: 'Bachata', content_tema: 'Giros Simples', students_count: 12 }
+];
+---
+
+<DashboardLayout title="Mis Clases">
+  <div class="header-section">
+    <h1>Control de Clases</h1>
+    <a href="/dashboard/instructor/clases/nueva" class="btn-primary">Registrar Nueva Clase</a>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Programa</th>
+          <th>Contenido / Tema</th>
+          <th>Asistencias</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {lessons.map(l => (
+          <tr>
+            <td class="bold">{l.date}</td>
+            <td>{l.program_name}</td>
+            <td><span class="tema-tag">{l.content_tema}</span></td>
+            <td>{l.students_count} Alumnos</td>
+            <td>
+              <a href={`/dashboard/instructor/asistencias/${l.id}`} class="btn-action">Pasar Asistencia</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</DashboardLayout>
+
+<style>
+  .header-section { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .btn-primary { background: #0ea5e9; color: white; padding: 0.7rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: bold; }
+  .table-wrapper { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #f8fafc; padding: 1rem; text-align: left; color: #64748b; font-size: 0.8rem; text-transform: uppercase; }
+  td { padding: 1rem; border-bottom: 1px solid #f1f5f9; }
+  .bold { font-weight: bold; color: #1e293b; }
+  .tema-tag { background: #f1f5f9; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; }
+  .btn-action { color: #0ea5e9; text-decoration: none; font-weight: 600; }
+</style>

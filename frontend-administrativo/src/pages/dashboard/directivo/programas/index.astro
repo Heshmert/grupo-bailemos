@@ -1,0 +1,192 @@
+---
+import DashboardLayout from '../../../../layouts/DashboardLayout.astro';
+
+// 1. CONFIGURACIÓN DE API (Descomentar al conectar)
+// const API_URL = import.meta.env.PUBLIC_API_URL;
+// const response = await fetch(`${API_URL}/programs?contain=Contracts.Users`, {
+//   headers: { 'Authorization': `Bearer ${Astro.cookies.get('token')}` }
+// });
+// const programs = await response.json();
+
+// 2. DATOS DE PRUEBA (Campos basados en tu tabla 'programs' y 'contracts')
+const programs = [
+  { 
+    id: 1, 
+    name: 'Salsa Casino Nivel 1', 
+    description: 'Curso introductorio a la salsa', 
+    contract_id: 101,
+    instructor_name: 'Juan Perez' // Esto vendría del contain de Users
+  },
+  { 
+    id: 2, 
+    name: 'Bachata Sensual', 
+    description: 'Técnicas avanzadas de conexión', 
+    contract_id: 102,
+    instructor_name: 'Maria Lopez'
+  }
+];
+---
+
+<DashboardLayout title="Programas Académicos">
+  <div class="header-section">
+    <h1>Programas Académicos</h1>
+    <a href="/dashboard/directivo/programas/nuevo" class="add-btn">Crear Programa</a>
+  </div>
+
+  <div class="grid-container">
+    {programs.map((p) => (
+      <div class="program-card">
+        <div class="card-header">
+          <span class="id-tag">ID: {p.id}</span>
+          <h2>{p.name}</h2>
+        </div>
+        
+        <div class="card-body">
+          <p class="desc">{p.description}</p>
+          <div class="info-row">
+            <span class="info-label">Instructor:</span>
+            <span class="info-value">{p.instructor_name}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Contrato Ref:</span>
+            <span class="info-value">#{p.contract_id}</span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <a href={`/dashboard/directivo/programas/${p.id}/contenidos`} class="btn-outline">Temario</a>
+          <a href={`/dashboard/directivo/programas/${p.id}/horarios`} class="btn-outline">Horarios</a>
+          <a href={`/dashboard/directivo/programas/${p.id}`} class="btn-manage">Gestionar</a>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <script>
+    import { checkAccess } from '../../../../utils/roleGuard.js';
+    checkAccess(['1']);
+  </script>
+</DashboardLayout>
+
+<style>
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .add-btn {
+    background: #0ea5e9;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+
+  .add-btn:hover { background: #0284c7; }
+
+  /* Grid de Tarjetas */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .program-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .id-tag {
+    font-size: 0.7rem;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #64748b;
+    font-weight: bold;
+  }
+
+  .card-header h2 {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.25rem;
+    color: #1e293b;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    flex: 1;
+  }
+
+  .desc {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-label { color: #94a3b8; }
+  .info-value { color: #1e293b; font-weight: 600; }
+
+  .card-footer {
+    padding: 1rem;
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .btn-outline {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #475569;
+    background: white;
+    font-weight: 600;
+  }
+
+  .btn-manage {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    background: #1e293b;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .grid-container { grid-template-columns: 1fr; }
+  }
+</style>

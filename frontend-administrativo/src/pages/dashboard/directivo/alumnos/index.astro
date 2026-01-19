@@ -1,0 +1,169 @@
+---
+import DashboardLayout from '../../../../layouts/DashboardLayout.astro';
+
+// 1. CONFIGURACIÓN DE API (Descomentar al conectar con CakePHP)
+// const API_URL = import.meta.env.PUBLIC_API_URL;
+// const response = await fetch(`${API_URL}/students`, {
+//   headers: { 'Authorization': `Bearer ${Astro.cookies.get('token')}` }
+// });
+// const students = await response.json();
+
+// 2. DATOS DE PRUEBA (Campos basados exactamente en tu tabla 'students')
+const students = [
+  { 
+    id: 1, 
+    name1: 'Luis', 
+    lastname1: 'Rodríguez', 
+    dni: 30123456, 
+    email: 'luis.estudiante@gmail.com', 
+    phone: 4241234567, 
+    address: 'Calle 5, Sector Centro' 
+  },
+  { 
+    id: 2, 
+    name1: 'Sofia', 
+    lastname1: 'Mendoza', 
+    dni: 31987654, 
+    email: 'sofia.m@gmail.com', 
+    phone: 4129876543, 
+    address: 'Av. Bolívar, Res. El Recreo' 
+  }
+];
+---
+
+<DashboardLayout title="Estudiantes">
+  <div class="header-section">
+    <h1>Listado de Estudiantes</h1>
+    <div class="actions">
+        <a href="/dashboard/directivo/alumnos/inscripciones" class="alt-btn">Ver Inscripciones</a>
+        <a href="/dashboard/directivo/alumnos/nuevo" class="add-btn">Nuevo Estudiante</a>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>DNI</th>
+          <th>Nombre Completo</th>
+          <th>Teléfono</th>
+          <th>Correo Electrónico</th>
+          <th>Dirección</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {students.map((s) => (
+          <tr>
+            <td><span class="dni-badge">{s.dni}</span></td>
+            <td><strong>{s.name1} {s.lastname1}</strong></td>
+            <td>{s.phone}</td>
+            <td>{s.email}</td>
+            <td class="address-cell">{s.address}</td>
+            <td class="actions-cell">
+              <a href={`/dashboard/directivo/alumnos/${s.id}`} class="edit-link">Ver Ficha</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    import { checkAccess } from '../../../../utils/roleGuard.js';
+    checkAccess(['1']);
+  </script>
+</DashboardLayout>
+
+<style>
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .add-btn {
+    background: #0ea5e9;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .alt-btn {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #e2e8f0;
+  }
+
+  .table-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  th {
+    background: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    color: #64748b;
+    border-bottom: 2px solid #e2e8f0;
+  }
+
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+  }
+
+  .dni-badge {
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 600;
+  }
+
+  .address-cell {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #64748b;
+  }
+
+  .edit-link {
+    color: #0ea5e9;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    .address-cell, th:nth-child(5) {
+      display: none;
+    }
+  }
+</style>

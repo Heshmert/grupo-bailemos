@@ -1,10 +1,69 @@
 ---
 import DashboardLayout from '../../../layouts/DashboardLayout.astro';
+
+// Datos de prueba (Hardcoded por ahora)
+const metrics = {
+  totalStudents: 1200,
+  instructors: 45,
+  activePrograms: 8
+};
 ---
+
 <DashboardLayout title="Panel Directivo">
   <h1>Bienvenido Directivo</h1>
+  
+  <section class="metrics-grid">
+    <div class="card">
+      <h3>Total Estudiantes</h3>
+      <p class="number">{metrics.totalStudents}</p> 
+    </div>
+    
+    <div class="card">
+      <h3>Instructores</h3>
+      <p class="number">{metrics.instructors}</p> 
+    </div>
+    
+    <div class="card">
+      <h3>Programas Activos</h3>
+      <p class="number">{metrics.activePrograms}</p> 
+    </div>
+  </section>
+
+  <section class="recent-activity">
+    <h2>Actividad de Inscripciones</h2>
+    </section>
+
   <script>
     import { checkAccess } from '../../../utils/roleGuard.js';
     checkAccess(['1']);
   </script>
 </DashboardLayout>
+
+<style>
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 20px;
+  }
+  .card {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .card h3 {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    color: #333;
+  }
+</style>
